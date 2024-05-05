@@ -1,0 +1,14 @@
+#!/bin/bash
+
+
+
+#Author : Yakir Hadad
+
+
+#EC2 instances
+private_ips=$(aws ec2 describe-instances --query 'Reservations[].Instances[].PrivateIpAddress' --output text)
+
+echo "Private IPs:" > private_ips.txt
+echo "$private_ips" >> private_ips.txt
+
+echo "Private IPs Readyfile:  private_ips.txt"
